@@ -1,5 +1,6 @@
 import React,{Component,Fragment} from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import {NavLink} from 'react-router-dom';
 
 class TopNavigation extends Component
 {
@@ -13,27 +14,26 @@ class TopNavigation extends Component
                 <div className="topNavigation">
                     <Container  className="innerTopNavigation p-0">
                         <Navbar className="navbar" expand="lg">
-                            <Navbar.Brand className="brand" href="#home">MEETME</Navbar.Brand>
+                            <NavLink className="brand navbar-brand" to="/">meetme</NavLink>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <div className="mr-auto"></div>
                                 <Nav className="navMenu">
-                                    <Nav.Link href="#home">Home</Nav.Link>
-                                    
-                                    <Nav.Link href="#link">About</Nav.Link>
-                                    <Nav.Link href="#link">service</Nav.Link>
+                                    <NavLink className="nav-link" to="/" >Home</NavLink>
+                                    <NavLink className="nav-link" to="/about">About</NavLink>
+                                    <NavLink className="nav-link" to="/service">service</NavLink>
                                     <Nav.Link href="#link">page
                                         <Nav className="dropdownMenu">
                                             <li>
-                                            <Nav.Link className="sub-link" href="#link">portfolio</Nav.Link>
+                                            <NavLink className="sub-link" to="/about">portfolio</NavLink>
                                             </li>
                                             <li>
-                                            <Nav.Link className="sub-link" href="#link">portfolio</Nav.Link>
+                                            <NavLink className="sub-link" to="/about">portfolio</NavLink>
                                             </li>
                                         </Nav>
                                     </Nav.Link>
-                                    <Nav.Link href="#link">blog</Nav.Link>
-                                    <Nav.Link href="#link">contact</Nav.Link>
+                                    <NavLink className="nav-link" to="/blog">blog</NavLink>
+                                    <NavLink className="nav-link" to="/contact">contact</NavLink>
                                 </Nav>    
                             </Navbar.Collapse>
                         </Navbar>
@@ -43,8 +43,6 @@ class TopNavigation extends Component
         )
     }
 }
-
-
 
 
 export default TopNavigation;

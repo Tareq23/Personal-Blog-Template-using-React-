@@ -530,6 +530,9 @@ TOP BANNER SECTION
     transition: all 1.5s ease-in-out;
 }
 
+/*========================================
+    TESTIMONIAL SECTION
+==========================================*/
 
 .testimonial_section{
     width:100%;
@@ -540,10 +543,13 @@ TOP BANNER SECTION
 
 .inner_testimonial_section{
     padding:100px 80px;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
 }
-.testimonial_top{
-    max-width:670px;
-    margin:0 auto 75px;
+.testimonial_top .heading{
+    padding:0 15%;
 }
 .testimonial_top h2{
     font-size:2em;

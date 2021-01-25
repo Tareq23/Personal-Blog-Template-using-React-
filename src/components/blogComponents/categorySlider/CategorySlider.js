@@ -15,8 +15,6 @@ const CategorySliders = styled.section`
     align-items:center;
 `;
 
-
-
 export default class CategorySlider extends Component
 {
     constructor()

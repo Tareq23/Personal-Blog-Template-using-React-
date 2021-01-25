@@ -22,7 +22,7 @@ class TestimonialSection extends Component
                 <Container fluid className="p-0 testimonial_section">
                     <div className="inner_testimonial_section">
                         <Row className="text-center testimonial_top">
-                            <Col lg={12} md={12} sm={12}>
+                            <Col className="heading" lg={12} md={12} sm={12}>
                                 <h2>Testimonials</h2>
                                 <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.</p>
                             </Col>

@@ -14,7 +14,7 @@ export default class BlogPage extends Component
     render(){
         return(
             <Fragment>
-                <TopNavigation/>
+                <TopNavigation title="Blog"/>
                 <BlogSection/>
                 <FooterSection/>
             </Fragment>

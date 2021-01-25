@@ -16,7 +16,7 @@ export default class SinglePostPage extends Component
     {
         return (
             <Fragment>
-                <TopNavigation/>
+                <TopNavigation title="Details Post"/>
                 <Container fluid className="p-0 pt-5">
                     <Row>
                         <Col lg={8} md={8} sm={12}>

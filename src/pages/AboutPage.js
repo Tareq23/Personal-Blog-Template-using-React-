@@ -16,7 +16,7 @@ export default class AboutPage extends Component
     render(){
         return(
             <Fragment>
-                <TopNavigation />
+                <TopNavigation title="About" />
                 <TopBannerInner />
                 <hr className="mt-5"/>
                 <AboutSection />

@@ -4,13 +4,16 @@ import {NavLink} from 'react-router-dom';
 
 class TopNavigation extends Component
 {
-    constructor(){
+    constructor(props){
         super();
-        this.state = {}
+        this.state = {
+            title : props.title,
+        }
     }
     render(){
         return (
             <Fragment>
+                <title>{this.state.title}</title>
                 <div className="topNavigation">
                     <Container  className="innerTopNavigation p-0">
                         <Navbar className="navbar" expand="lg">
@@ -19,21 +22,21 @@ class TopNavigation extends Component
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <div className="mr-auto"></div>
                                 <Nav className="navMenu">
-                                    <NavLink className="nav-link" to="/" >Home</NavLink>
-                                    <NavLink className="nav-link" to="/about">About</NavLink>
-                                    <NavLink className="nav-link" to="/service">service</NavLink>
-                                    <Nav.Link href="#link">page
-                                        <Nav className="dropdownMenu">
+                                    <NavLink exact activeStyle={{color:"#fff"}} className="nav-link" to="/" >Home</NavLink>
+                                    <NavLink exact activeStyle={{color:"#fff"}} className="nav-link" to="/about">About</NavLink>
+                                    <NavLink exact activeStyle={{color:"#fff"}} className="nav-link" to="/service">service</NavLink>
+                                    {/* <Nav.Link href="#link">page
+                                        <ul className="dropdownMenu">
                                             <li>
                                             <NavLink className="sub-link" to="/about">portfolio</NavLink>
                                             </li>
                                             <li>
                                             <NavLink className="sub-link" to="/about">portfolio</NavLink>
                                             </li>
-                                        </Nav>
-                                    </Nav.Link>
-                                    <NavLink className="nav-link" to="/blog">blog</NavLink>
-                                    <NavLink className="nav-link" to="/contact">contact</NavLink>
+                                        </ul>
+                                    </Nav.Link> */}
+                                    <NavLink exact activeStyle={{color:"#fff"}} className="nav-link" to="/blog">blog</NavLink>
+                                    <NavLink exact activeStyle={{color:"#fff"}} className="nav-link" to="/contact">contact</NavLink>
                                 </Nav>    
                             </Navbar.Collapse>
                         </Navbar>

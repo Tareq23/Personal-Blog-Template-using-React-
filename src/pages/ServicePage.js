@@ -19,7 +19,7 @@ export default class ServicePage extends Component
     render(){
         return(
             <Fragment>
-                <TopNavigation/>
+                <TopNavigation title="Service"/>
                 <ClientOffer />
                 <TestimonialSection/>
                 <FooterSection/>

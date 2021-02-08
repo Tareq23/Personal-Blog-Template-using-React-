@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 
-
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 import './assets/css/bootstrap.min.css';
 import './assets/css/custom.css';
 import './assets/css/blog.css';

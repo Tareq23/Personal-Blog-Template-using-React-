@@ -11,13 +11,18 @@ export default class HomePage extends Component
 {
     constructor(){
         super();
-        this.state = {}
+        this.state = {
+            bgColor: {
+                color:'#000',
+                backgroundColor : 'linear-gradient(to right,#766fff,#88f1ff)'
+            }
+        }
     }
 
     render(){
         return (
             <Fragment>
-                <TopNavigation title="Home"/>
+                <TopNavigation title="Home" bgColor={this.state.bgColor}/>
                 <TopBanner/>
                 <AboutSection/>
                 <ExperienceEducation/>

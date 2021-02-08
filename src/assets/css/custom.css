@@ -29,24 +29,34 @@ a:hover{
     Top Navigation
 =====================================*/
 
-.topNavigation{
+.top_navigation_without_scroll{
     background:linear-gradient(to right,
     #766fff,#88f1ff);
+    position:fixed;
+    z-index:1;
+    width:100vw;
+    box-shadow:0 0;
 }
-.innerTopNavigation{
-    height:80px;
+.top_navigation_on_scroll{
+    background:linear-gradient(to right,
+    #9594b8,#72a5ac);
+    position:fixed;
+    text-align: center;
+    z-index:1;
+    width:100vw;
+    max-height:80px;
+    /* box-shadow: 0 15px  red; */
+    box-shadow: 5px 5px 10px 5px  rgb(107, 104, 104);;
 }
-
-
-.innerTopNavigation .navbar{
+.inner_top_navigation .navbar{
+    width:100%;
     height:100%;
     display:flex;
     flex-direction: row;
     align-items: center;
-    z-index: 1;
 }
 
-.innerTopNavigation .navbar .brand{
+.inner_top_navigation .navbar .brand{
     color:#000000;
     font-size:2.3rem;
     text-transform: uppercase;
@@ -56,7 +66,7 @@ a:hover{
 .navbar-nav .nav-link{
     position:relative;
     text-transform: uppercase;
-    padding:35px 0px;
+    /* padding:35px 0px; */
 }
 
 .navbar-nav .nav-link .dropdownMenu{
@@ -69,7 +79,6 @@ a:hover{
     color:#000;
 }
 .navbar-nav .nav-link:hover .dropdownMenu{
-    
     left:0px;
     top:87px;
 }
@@ -489,10 +498,11 @@ TOP BANNER SECTION
     padding:0;
 }
 .project_design .project_card{
-    width:94%;
+    width:100%;
 }
 
 .inner_project_card{
+    width:100%;
     display:flex;
     flex-direction:column;
     justify-content: center;
@@ -501,6 +511,7 @@ TOP BANNER SECTION
 
 .inner_project_card img{
     position:relative;
+    /* width:100%; */
 }
 
 .project_text{
@@ -569,6 +580,7 @@ TOP BANNER SECTION
     border-radius: 10px;
     box-shadow: 2px rgb(119, 119, 115);
     padding:15px;
+    /* margin:0 1em; */
     background-color:#ffffff;
 }
 

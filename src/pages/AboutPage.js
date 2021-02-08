@@ -11,12 +11,19 @@ export default class AboutPage extends Component
     constructor()
     {
         super();
-        this.state = {}
+        this.state = {
+            short_desc:"",
+            skills : [],
+            bgColor: {
+                color:'#000',
+                backgroundColor : 'linear-gradient(to right,#9594b8,#72a5ac)'
+            }
+        }
     }
     render(){
         return(
             <Fragment>
-                <TopNavigation title="About" />
+                <TopNavigation title="About" bgColor={this.state.bgColor} />
                 <TopBannerInner />
                 <hr className="mt-5"/>
                 <AboutSection />

@@ -1,6 +1,8 @@
 import React,{Component,Fragment} from 'react';
 import { Container, Row,Col} from "react-bootstrap";
 import styled from 'styled-components';
+import ApiUrl from '../../restApi/ApiUrl';
+import RestClient from '../../restApi/RestClient';
 
 
 
@@ -29,28 +31,47 @@ class AboutSection extends Component{
     constructor(props){
         super(props);
         this.state = {
-            data : [
-                {
-                    technology:"adad",projects:83
-                },
-                {
-                    technology:"aaaa",projects:45
-                },
-                {
-                    technology:"ccc",projects:67
-                },
-                {
-                    technology:"ddd",projects:45
-                },
-                {
-                    technology:"eee",projects:43
-                }
-            ]
+            
+            short_desc : "...",
+            skills : []
+            
         }
     }
+
+    componentDidMount()
+    {
+        RestClient.GetRequest(ApiUrl.aboutMe)
+                    .then(result=>{
+                        
+                        this.setState(
+                            
+                            {short_desc:result[0].about_desc,skills:JSON.parse(result[0].skills)}
+                        );
+                        
+                    }).catch(error=>{
+
+                    })
+    }
+
     render()
     {
-        //let fill_color="linear-gradient(to right #766fff,#88f1ff)";
+        
+        const data = this.state.skills;
+        const progress = data.map(result=>{
+            return(
+                <div key={result.name} className="skill_progress">
+                    <div className="progress_text">
+                        <p>{result.name} <span>{result.value}%</span></p>
+                    </div>
+                    <div className="custom_progress">
+                        <ProgressSection>
+                            <ProgressBar percentage={result.value}/>
+                        </ProgressSection>
+                    </div>
+                </div>
+            )
+        });
+
         return(
             <Fragment>
                 <Container className="about_section">
@@ -58,60 +79,14 @@ class AboutSection extends Component{
                         <Col lg={6} md={6} sm={12}>
                             <div className="about_text">
                                 <h2>About Myself</h2>
-                                <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed.</p>
+                                <p>{this.state.short_desc}</p>
                             </div>
                         </Col>
                         <Col lg={6} md={6} sm={12} >
-                            <div className="skill_progress">
-                                <div className="progress_text">
-                                    <p>After Effects <span>85%</span></p>
-                                </div>
-                                <div className="custom_progress">
-                                    <ProgressSection>
-                                        <ProgressBar percentage={85}/>
-                                    </ProgressSection>
-                                </div>
-                            </div>
-                            <div className="skill_progress">
-                                <div className="progress_text">
-                                    <p>Photoshop <span>90%</span></p>
-                                </div>
-                                <div className="custom_progress">
-                                    <ProgressSection>
-                                        <ProgressBar percentage={90}/>
-                                    </ProgressSection>
-                                </div>
-                            </div>
-                            <div className="skill_progress">
-                                <div className="progress_text">
-                                    <p>Illustrator <span>70%</span></p>
-                                </div>
-                                <div className="custom_progress">
-                                    <ProgressSection>
-                                        <ProgressBar percentage={70}/>
-                                    </ProgressSection>
-                                </div>
-                            </div>
-                            <div className="skill_progress">
-                                <div className="progress_text">
-                                    <p>Sublime <span>95%</span></p>
-                                </div>
-                                <div className="custom_progress">
-                                    <ProgressSection>
-                                        <ProgressBar percentage={95}/>
-                                    </ProgressSection>
-                                </div>
-                            </div>
-                            <div className="skill_progress">
-                                <div className="progress_text">
-                                    <p>Sketch <span>75%</span></p>
-                                </div>
-                                <div className="custom_progress">
-                                    <ProgressSection>
-                                        <ProgressBar percentage={75}/>
-                                    </ProgressSection>
-                                </div>
-                            </div>
+                            {
+                                progress
+                            }
+                            
                         </Col>
                     </Row>
                 </Container>

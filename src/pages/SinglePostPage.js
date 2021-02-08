@@ -10,13 +10,18 @@ export default class SinglePostPage extends Component
 {
     constructor(){
         super();
-        this.state = {}
+        this.state = {
+            bgColor: {
+                color:'#fff',
+                backgroundColor : 'rgba(0,0,0,0.0)'
+            }
+        }
     }
     render()
     {
         return (
             <Fragment>
-                <TopNavigation title="Details Post"/>
+                <TopNavigation title="Details Post" bgColor={this.state.bgColor}/>
                 <Container fluid className="p-0 pt-5">
                     <Row>
                         <Col lg={8} md={8} sm={12}>

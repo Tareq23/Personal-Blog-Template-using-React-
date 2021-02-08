@@ -6,7 +6,7 @@ import BG_image from '../../../assets/img/banner/banner-2.jpg';
 const BlogBanner = styled.section`
     width:100%;
     min-height:100vh;
-    background-color:red;
+    // background-color:red;
     background-image:url('${props=>props.bg_image}');
     position:relative;
     background-position:50% 15%;

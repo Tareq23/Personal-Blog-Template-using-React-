@@ -13,13 +13,18 @@ export default class ServicePage extends Component
     constructor()
     {
         super();
-        this.state = {}
+        this.state = {
+            bgColor: {
+                color:'#000',
+                backgroundColor : 'linear-gradient(to right,#9594b8,#72a5ac)'
+            }
+        }
     }
 
     render(){
         return(
             <Fragment>
-                <TopNavigation title="Service"/>
+                <TopNavigation title="Service" bgColor={this.state.bgColor}/>
                 <ClientOffer />
                 <TestimonialSection/>
                 <FooterSection/>

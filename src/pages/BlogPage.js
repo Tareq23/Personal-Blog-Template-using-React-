@@ -9,12 +9,17 @@ export default class BlogPage extends Component
 {
     constructor(){
         super();
-        this.state = {}
+        this.state = {
+            bgColor : {
+                color:'#fff',
+                backgroundColor : 'rgba(0,0,0,0.0)',
+            }
+        }
     }
     render(){
         return(
             <Fragment>
-                <TopNavigation title="Blog"/>
+                <TopNavigation title="Blog" bgColor = {this.state.bgColor}/>
                 <BlogSection/>
                 <FooterSection/>
             </Fragment>
